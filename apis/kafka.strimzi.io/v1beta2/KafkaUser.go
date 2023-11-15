@@ -5,7 +5,7 @@ package v1beta2
 import "encoding/json"
 import "fmt"
 import "reflect"
-import "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
+import apiextensions "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 import metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 

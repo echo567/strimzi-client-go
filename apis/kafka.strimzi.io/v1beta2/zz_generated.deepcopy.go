@@ -5,7 +5,7 @@
 package v1beta2
 
 import (
-	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions"
+	"k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -221,6 +221,8 @@ func (in *KafkaBridgeSpecAdminClient) DeepCopyInto(out *KafkaBridgeSpecAdminClie
 	*out = *in
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -439,6 +441,8 @@ func (in *KafkaBridgeSpecConsumer) DeepCopyInto(out *KafkaBridgeSpecConsumer) {
 	*out = *in
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -599,6 +603,8 @@ func (in *KafkaBridgeSpecLogging) DeepCopyInto(out *KafkaBridgeSpecLogging) {
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -672,6 +678,8 @@ func (in *KafkaBridgeSpecProducer) DeepCopyInto(out *KafkaBridgeSpecProducer) {
 	*out = *in
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -752,9 +760,13 @@ func (in *KafkaBridgeSpecResources) DeepCopyInto(out *KafkaBridgeSpecResources) 
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -878,9 +890,13 @@ func (in *KafkaBridgeSpecTemplateApiServiceMetadata) DeepCopyInto(out *KafkaBrid
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -1161,9 +1177,13 @@ func (in *KafkaBridgeSpecTemplateClusterRoleBindingMetadata) DeepCopyInto(out *K
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -1207,9 +1227,13 @@ func (in *KafkaBridgeSpecTemplateDeploymentMetadata) DeepCopyInto(out *KafkaBrid
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -1931,6 +1955,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAffinityPreferredDuringScheduling
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -1986,6 +2012,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAffinityPreferredDuringScheduling
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2076,6 +2104,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAffinityRequiredDuringSchedulingI
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2131,6 +2161,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAffinityRequiredDuringSchedulingI
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2275,6 +2307,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2330,6 +2364,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2420,6 +2456,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2475,6 +2513,8 @@ func (in *KafkaBridgeSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2548,9 +2588,13 @@ func (in *KafkaBridgeSpecTemplatePodDisruptionBudgetMetadata) DeepCopyInto(out *
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2614,9 +2658,13 @@ func (in *KafkaBridgeSpecTemplatePodMetadata) DeepCopyInto(out *KafkaBridgeSpecT
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2924,6 +2972,8 @@ func (in *KafkaBridgeSpecTemplatePodTopologySpreadConstraintsElemLabelSelector) 
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -2992,9 +3042,13 @@ func (in *KafkaBridgeSpecTemplateServiceAccountMetadata) DeepCopyInto(out *Kafka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -3227,6 +3281,8 @@ func (in *KafkaConnectSpec) DeepCopyInto(out *KafkaConnectSpec) {
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ExternalConfiguration != nil {
 		in, out := &in.ExternalConfiguration, &out.ExternalConfiguration
@@ -3657,9 +3713,13 @@ func (in *KafkaConnectSpecBuildResources) DeepCopyInto(out *KafkaConnectSpecBuil
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -4114,6 +4174,8 @@ func (in *KafkaConnectSpecLogging) DeepCopyInto(out *KafkaConnectSpecLogging) {
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -4315,9 +4377,13 @@ func (in *KafkaConnectSpecResources) DeepCopyInto(out *KafkaConnectSpecResources
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -4476,9 +4542,13 @@ func (in *KafkaConnectSpecTemplateApiServiceMetadata) DeepCopyInto(out *KafkaCon
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -4522,9 +4592,13 @@ func (in *KafkaConnectSpecTemplateBuildConfigMetadata) DeepCopyInto(out *KafkaCo
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5246,6 +5320,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5301,6 +5377,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5391,6 +5469,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5446,6 +5526,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5590,6 +5672,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAntiAffinityPreferredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5645,6 +5729,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAntiAffinityPreferredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5735,6 +5821,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAntiAffinityRequiredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5790,6 +5878,8 @@ func (in *KafkaConnectSpecTemplateBuildPodAffinityPodAntiAffinityRequiredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -5883,9 +5973,13 @@ func (in *KafkaConnectSpecTemplateBuildPodMetadata) DeepCopyInto(out *KafkaConne
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6193,6 +6287,8 @@ func (in *KafkaConnectSpecTemplateBuildPodTopologySpreadConstraintsElemLabelSele
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6261,9 +6357,13 @@ func (in *KafkaConnectSpecTemplateBuildServiceAccountMetadata) DeepCopyInto(out 
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6302,9 +6402,13 @@ func (in *KafkaConnectSpecTemplateClusterRoleBindingMetadata) DeepCopyInto(out *
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6590,9 +6694,13 @@ func (in *KafkaConnectSpecTemplateDeploymentMetadata) DeepCopyInto(out *KafkaCon
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6641,9 +6749,13 @@ func (in *KafkaConnectSpecTemplateHeadlessServiceMetadata) DeepCopyInto(out *Kaf
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -6924,9 +7036,13 @@ func (in *KafkaConnectSpecTemplateJmxSecretMetadata) DeepCopyInto(out *KafkaConn
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7406,6 +7522,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAffinityPreferredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7461,6 +7579,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAffinityPreferredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7551,6 +7671,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAffinityRequiredDuringScheduling
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7606,6 +7728,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAffinityRequiredDuringScheduling
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7750,6 +7874,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7805,6 +7931,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7895,6 +8023,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -7950,6 +8080,8 @@ func (in *KafkaConnectSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8023,9 +8155,13 @@ func (in *KafkaConnectSpecTemplatePodDisruptionBudgetMetadata) DeepCopyInto(out 
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8089,9 +8225,13 @@ func (in *KafkaConnectSpecTemplatePodMetadata) DeepCopyInto(out *KafkaConnectSpe
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8317,9 +8457,13 @@ func (in *KafkaConnectSpecTemplatePodSetMetadata) DeepCopyInto(out *KafkaConnect
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8440,6 +8584,8 @@ func (in *KafkaConnectSpecTemplatePodTopologySpreadConstraintsElemLabelSelector)
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8508,9 +8654,13 @@ func (in *KafkaConnectSpecTemplateServiceAccountMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -8775,6 +8925,8 @@ func (in *KafkaConnectorSpec) DeepCopyInto(out *KafkaConnectorSpec) {
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Pause != nil {
 		in, out := &in.Pause, &out.Pause
@@ -8835,6 +8987,8 @@ func (in *KafkaConnectorStatus) DeepCopyInto(out *KafkaConnectorStatus) {
 	}
 	if in.ConnectorStatus != nil {
 		in, out := &in.ConnectorStatus, &out.ConnectorStatus
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ObservedGeneration != nil {
 		in, out := &in.ObservedGeneration, &out.ObservedGeneration
@@ -9181,6 +9335,8 @@ func (in *KafkaMirrorMaker2SpecClustersElem) DeepCopyInto(out *KafkaMirrorMaker2
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Tls != nil {
 		in, out := &in.Tls, &out.Tls
@@ -9855,6 +10011,8 @@ func (in *KafkaMirrorMaker2SpecLogging) DeepCopyInto(out *KafkaMirrorMaker2SpecL
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -10059,6 +10217,8 @@ func (in *KafkaMirrorMaker2SpecMirrorsElemCheckpointConnector) DeepCopyInto(out 
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Pause != nil {
 		in, out := &in.Pause, &out.Pause
@@ -10112,6 +10272,8 @@ func (in *KafkaMirrorMaker2SpecMirrorsElemHeartbeatConnector) DeepCopyInto(out *
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Pause != nil {
 		in, out := &in.Pause, &out.Pause
@@ -10165,6 +10327,8 @@ func (in *KafkaMirrorMaker2SpecMirrorsElemSourceConnector) DeepCopyInto(out *Kaf
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Pause != nil {
 		in, out := &in.Pause, &out.Pause
@@ -10275,9 +10439,13 @@ func (in *KafkaMirrorMaker2SpecResources) DeepCopyInto(out *KafkaMirrorMaker2Spe
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -10436,9 +10604,13 @@ func (in *KafkaMirrorMaker2SpecTemplateApiServiceMetadata) DeepCopyInto(out *Kaf
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -10482,9 +10654,13 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildConfigMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11206,6 +11382,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11261,6 +11439,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11351,6 +11531,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11406,6 +11588,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11550,6 +11734,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAntiAffinityPreferredD
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11605,6 +11791,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAntiAffinityPreferredD
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11695,6 +11883,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAntiAffinityRequiredDu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11750,6 +11940,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodAffinityPodAntiAffinityRequiredDu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11843,9 +12035,13 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodMetadata) DeepCopyInto(out *Kafka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12153,6 +12349,8 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildPodTopologySpreadConstraintsElemLabe
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12221,9 +12419,13 @@ func (in *KafkaMirrorMaker2SpecTemplateBuildServiceAccountMetadata) DeepCopyInto
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12262,9 +12464,13 @@ func (in *KafkaMirrorMaker2SpecTemplateClusterRoleBindingMetadata) DeepCopyInto(
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12550,9 +12756,13 @@ func (in *KafkaMirrorMaker2SpecTemplateDeploymentMetadata) DeepCopyInto(out *Kaf
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12601,9 +12811,13 @@ func (in *KafkaMirrorMaker2SpecTemplateHeadlessServiceMetadata) DeepCopyInto(out
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12884,9 +13098,13 @@ func (in *KafkaMirrorMaker2SpecTemplateJmxSecretMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13366,6 +13584,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13421,6 +13641,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13511,6 +13733,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13566,6 +13790,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13710,6 +13936,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAntiAffinityPreferredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13765,6 +13993,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAntiAffinityPreferredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13855,6 +14085,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAntiAffinityRequiredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13910,6 +14142,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodAffinityPodAntiAffinityRequiredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -13983,9 +14217,13 @@ func (in *KafkaMirrorMaker2SpecTemplatePodDisruptionBudgetMetadata) DeepCopyInto
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -14049,9 +14287,13 @@ func (in *KafkaMirrorMaker2SpecTemplatePodMetadata) DeepCopyInto(out *KafkaMirro
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -14277,9 +14519,13 @@ func (in *KafkaMirrorMaker2SpecTemplatePodSetMetadata) DeepCopyInto(out *KafkaMi
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -14400,6 +14646,8 @@ func (in *KafkaMirrorMaker2SpecTemplatePodTopologySpreadConstraintsElemLabelSele
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -14468,9 +14716,13 @@ func (in *KafkaMirrorMaker2SpecTemplateServiceAccountMetadata) DeepCopyInto(out 
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -14525,10 +14777,12 @@ func (in *KafkaMirrorMaker2Status) DeepCopyInto(out *KafkaMirrorMaker2Status) {
 	}
 	if in.Connectors != nil {
 		in, out := &in.Connectors, &out.Connectors
-		*out = make([]*apiextensions.JSON, len(*in))
+		*out = make([]*v1.JSON, len(*in))
 		for i := range *in {
 			if (*in)[i] != nil {
 				in, out := &(*in)[i], &(*out)[i]
+				*out = new(v1.JSON)
+				(*in).DeepCopyInto(*out)
 			}
 		}
 	}
@@ -14783,6 +15037,8 @@ func (in *KafkaMirrorMakerSpecConsumer) DeepCopyInto(out *KafkaMirrorMakerSpecCo
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NumStreams != nil {
 		in, out := &in.NumStreams, &out.NumStreams
@@ -15143,6 +15399,8 @@ func (in *KafkaMirrorMakerSpecLogging) DeepCopyInto(out *KafkaMirrorMakerSpecLog
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -15292,6 +15550,8 @@ func (in *KafkaMirrorMakerSpecProducer) DeepCopyInto(out *KafkaMirrorMakerSpecPr
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Tls != nil {
 		in, out := &in.Tls, &out.Tls
@@ -15597,9 +15857,13 @@ func (in *KafkaMirrorMakerSpecResources) DeepCopyInto(out *KafkaMirrorMakerSpecR
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -15703,9 +15967,13 @@ func (in *KafkaMirrorMakerSpecTemplateDeploymentMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16427,6 +16695,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAffinityPreferredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16482,6 +16752,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAffinityPreferredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16572,6 +16844,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAffinityRequiredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16627,6 +16901,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAffinityRequiredDuringSchedu
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16771,6 +17047,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAntiAffinityPreferredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16826,6 +17104,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAntiAffinityPreferredDuringS
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16916,6 +17196,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSc
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -16971,6 +17253,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSc
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17044,9 +17328,13 @@ func (in *KafkaMirrorMakerSpecTemplatePodDisruptionBudgetMetadata) DeepCopyInto(
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17110,9 +17398,13 @@ func (in *KafkaMirrorMakerSpecTemplatePodMetadata) DeepCopyInto(out *KafkaMirror
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17420,6 +17712,8 @@ func (in *KafkaMirrorMakerSpecTemplatePodTopologySpreadConstraintsElemLabelSelec
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17488,9 +17782,13 @@ func (in *KafkaMirrorMakerSpecTemplateServiceAccountMetadata) DeepCopyInto(out *
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17763,9 +18061,13 @@ func (in *KafkaNodePoolSpecResources) DeepCopyInto(out *KafkaNodePoolSpecResourc
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -17826,6 +18128,8 @@ func (in *KafkaNodePoolSpecStorage) DeepCopyInto(out *KafkaNodePoolSpecStorage) 
 	}
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
@@ -17908,6 +18212,8 @@ func (in *KafkaNodePoolSpecStorageVolumesElem) DeepCopyInto(out *KafkaNodePoolSp
 	}
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
@@ -18520,9 +18826,13 @@ func (in *KafkaNodePoolSpecTemplatePerPodIngressMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -18561,9 +18871,13 @@ func (in *KafkaNodePoolSpecTemplatePerPodRouteMetadata) DeepCopyInto(out *KafkaN
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -18602,9 +18916,13 @@ func (in *KafkaNodePoolSpecTemplatePerPodServiceMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -18643,9 +18961,13 @@ func (in *KafkaNodePoolSpecTemplatePersistentVolumeClaimMetadata) DeepCopyInto(o
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19125,6 +19447,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAffinityPreferredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19180,6 +19504,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAffinityPreferredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19270,6 +19596,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAffinityRequiredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19325,6 +19653,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAffinityRequiredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19469,6 +19799,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19524,6 +19856,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAntiAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19614,6 +19948,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19669,6 +20005,8 @@ func (in *KafkaNodePoolSpecTemplatePodAffinityPodAntiAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19762,9 +20100,13 @@ func (in *KafkaNodePoolSpecTemplatePodMetadata) DeepCopyInto(out *KafkaNodePoolS
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -19990,9 +20332,13 @@ func (in *KafkaNodePoolSpecTemplatePodSetMetadata) DeepCopyInto(out *KafkaNodePo
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -20113,6 +20459,8 @@ func (in *KafkaNodePoolSpecTemplatePodTopologySpreadConstraintsElemLabelSelector
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -20397,6 +20745,8 @@ func (in *KafkaRebalanceStatus) DeepCopyInto(out *KafkaRebalanceStatus) {
 	}
 	if in.OptimizationResult != nil {
 		in, out := &in.OptimizationResult, &out.OptimizationResult
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SessionId != nil {
 		in, out := &in.SessionId, &out.SessionId
@@ -20597,6 +20947,8 @@ func (in *KafkaSpecCruiseControl) DeepCopyInto(out *KafkaSpecCruiseControl) {
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Image != nil {
 		in, out := &in.Image, &out.Image
@@ -20834,6 +21186,8 @@ func (in *KafkaSpecCruiseControlLogging) DeepCopyInto(out *KafkaSpecCruiseContro
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -21020,9 +21374,13 @@ func (in *KafkaSpecCruiseControlResources) DeepCopyInto(out *KafkaSpecCruiseCont
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -21141,9 +21499,13 @@ func (in *KafkaSpecCruiseControlTemplateApiServiceMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -21429,9 +21791,13 @@ func (in *KafkaSpecCruiseControlTemplateDeploymentMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -21911,6 +22277,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -21966,6 +22334,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22056,6 +22426,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22111,6 +22483,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22255,6 +22629,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAntiAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22310,6 +22686,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAntiAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22400,6 +22778,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAntiAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22455,6 +22835,8 @@ func (in *KafkaSpecCruiseControlTemplatePodAffinityPodAntiAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22528,9 +22910,13 @@ func (in *KafkaSpecCruiseControlTemplatePodDisruptionBudgetMetadata) DeepCopyInt
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22594,9 +22980,13 @@ func (in *KafkaSpecCruiseControlTemplatePodMetadata) DeepCopyInto(out *KafkaSpec
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22904,6 +23294,8 @@ func (in *KafkaSpecCruiseControlTemplatePodTopologySpreadConstraintsElemLabelSel
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22972,9 +23364,13 @@ func (in *KafkaSpecCruiseControlTemplateServiceAccountMetadata) DeepCopyInto(out
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -23362,9 +23758,13 @@ func (in *KafkaSpecCruiseControlTlsSidecarResources) DeepCopyInto(out *KafkaSpec
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -23523,9 +23923,13 @@ func (in *KafkaSpecEntityOperatorTemplateDeploymentMetadata) DeepCopyInto(out *K
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -23564,9 +23968,13 @@ func (in *KafkaSpecEntityOperatorTemplateEntityOperatorRoleMetadata) DeepCopyInt
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24046,6 +24454,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAffinityPreferredDuringSc
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24101,6 +24511,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAffinityPreferredDuringSc
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24191,6 +24603,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAffinityRequiredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24246,6 +24660,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAffinityRequiredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24390,6 +24806,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAntiAffinityPreferredDuri
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24445,6 +24863,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAntiAffinityPreferredDuri
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24535,6 +24955,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAntiAffinityRequiredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24590,6 +25012,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodAffinityPodAntiAffinityRequiredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24683,9 +25107,13 @@ func (in *KafkaSpecEntityOperatorTemplatePodMetadata) DeepCopyInto(out *KafkaSpe
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24993,6 +25421,8 @@ func (in *KafkaSpecEntityOperatorTemplatePodTopologySpreadConstraintsElemLabelSe
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -25061,9 +25491,13 @@ func (in *KafkaSpecEntityOperatorTemplateServiceAccountMetadata) DeepCopyInto(ou
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -25586,9 +26020,13 @@ func (in *KafkaSpecEntityOperatorTemplateTopicOperatorRoleBindingMetadata) DeepC
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -25869,9 +26307,13 @@ func (in *KafkaSpecEntityOperatorTemplateUserOperatorRoleBindingMetadata) DeepCo
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -26017,9 +26459,13 @@ func (in *KafkaSpecEntityOperatorTlsSidecarResources) DeepCopyInto(out *KafkaSpe
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -26220,6 +26666,8 @@ func (in *KafkaSpecEntityOperatorTopicOperatorLogging) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -26340,9 +26788,13 @@ func (in *KafkaSpecEntityOperatorTopicOperatorResources) DeepCopyInto(out *Kafka
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -26578,6 +27030,8 @@ func (in *KafkaSpecEntityOperatorUserOperatorLogging) DeepCopyInto(out *KafkaSpe
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -26698,9 +27152,13 @@ func (in *KafkaSpecEntityOperatorUserOperatorResources) DeepCopyInto(out *KafkaS
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -26855,9 +27313,13 @@ func (in *KafkaSpecJmxTransResources) DeepCopyInto(out *KafkaSpecJmxTransResourc
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27198,9 +27660,13 @@ func (in *KafkaSpecJmxTransTemplateDeploymentMetadata) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27680,6 +28146,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAffinityPreferredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27735,6 +28203,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAffinityPreferredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27825,6 +28295,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAffinityRequiredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27880,6 +28352,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAffinityRequiredDuringSchedulin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28024,6 +28498,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAntiAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28079,6 +28555,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAntiAffinityPreferredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28169,6 +28647,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAntiAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28224,6 +28704,8 @@ func (in *KafkaSpecJmxTransTemplatePodAffinityPodAntiAffinityRequiredDuringSched
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28317,9 +28799,13 @@ func (in *KafkaSpecJmxTransTemplatePodMetadata) DeepCopyInto(out *KafkaSpecJmxTr
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28627,6 +29113,8 @@ func (in *KafkaSpecJmxTransTemplatePodTopologySpreadConstraintsElemLabelSelector
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28695,9 +29183,13 @@ func (in *KafkaSpecJmxTransTemplateServiceAccountMetadata) DeepCopyInto(out *Kaf
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28726,6 +29218,8 @@ func (in *KafkaSpecKafka) DeepCopyInto(out *KafkaSpecKafka) {
 	}
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Image != nil {
 		in, out := &in.Image, &out.Image
@@ -29104,9 +29598,13 @@ func (in *KafkaSpecKafkaExporterResources) DeepCopyInto(out *KafkaSpecKafkaExpor
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -29452,9 +29950,13 @@ func (in *KafkaSpecKafkaExporterTemplateDeploymentMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -29934,6 +30436,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -29989,6 +30493,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30079,6 +30585,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30134,6 +30642,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30278,6 +30788,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAntiAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30333,6 +30845,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAntiAffinityPreferredDurin
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30423,6 +30937,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAntiAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30478,6 +30994,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodAffinityPodAntiAffinityRequiredDuring
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30571,9 +31089,13 @@ func (in *KafkaSpecKafkaExporterTemplatePodMetadata) DeepCopyInto(out *KafkaSpec
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30881,6 +31403,8 @@ func (in *KafkaSpecKafkaExporterTemplatePodTopologySpreadConstraintsElemLabelSel
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30969,9 +31493,13 @@ func (in *KafkaSpecKafkaExporterTemplateServiceAccountMetadata) DeepCopyInto(out
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30990,9 +31518,13 @@ func (in *KafkaSpecKafkaExporterTemplateServiceMetadata) DeepCopyInto(out *Kafka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -31270,6 +31802,8 @@ func (in *KafkaSpecKafkaListenersElemAuthentication) DeepCopyInto(out *KafkaSpec
 	}
 	if in.ListenerConfig != nil {
 		in, out := &in.ListenerConfig, &out.ListenerConfig
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.MaxSecondsWithoutReauthentication != nil {
 		in, out := &in.MaxSecondsWithoutReauthentication, &out.MaxSecondsWithoutReauthentication
@@ -31475,6 +32009,8 @@ func (in *KafkaSpecKafkaListenersElemConfigurationBootstrap) DeepCopyInto(out *K
 	}
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Host != nil {
 		in, out := &in.Host, &out.Host
@@ -31483,6 +32019,8 @@ func (in *KafkaSpecKafkaListenersElemConfigurationBootstrap) DeepCopyInto(out *K
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LoadBalancerIP != nil {
 		in, out := &in.LoadBalancerIP, &out.LoadBalancerIP
@@ -31536,6 +32074,8 @@ func (in *KafkaSpecKafkaListenersElemConfigurationBrokersElem) DeepCopyInto(out 
 	}
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Host != nil {
 		in, out := &in.Host, &out.Host
@@ -31544,6 +32084,8 @@ func (in *KafkaSpecKafkaListenersElemConfigurationBrokersElem) DeepCopyInto(out 
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LoadBalancerIP != nil {
 		in, out := &in.LoadBalancerIP, &out.LoadBalancerIP
@@ -31634,6 +32176,8 @@ func (in *KafkaSpecKafkaListenersElemNetworkPolicyPeersElemNamespaceSelector) De
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -31689,6 +32233,8 @@ func (in *KafkaSpecKafkaListenersElemNetworkPolicyPeersElemPodSelector) DeepCopy
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -31777,6 +32323,8 @@ func (in *KafkaSpecKafkaLogging) DeepCopyInto(out *KafkaSpecKafkaLogging) {
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -31978,9 +32526,13 @@ func (in *KafkaSpecKafkaResources) DeepCopyInto(out *KafkaSpecKafkaResources) {
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32041,6 +32593,8 @@ func (in *KafkaSpecKafkaStorage) DeepCopyInto(out *KafkaSpecKafkaStorage) {
 	}
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
@@ -32123,6 +32677,8 @@ func (in *KafkaSpecKafkaStorageVolumesElem) DeepCopyInto(out *KafkaSpecKafkaStor
 	}
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
@@ -32316,9 +32872,13 @@ func (in *KafkaSpecKafkaTemplateBootstrapServiceMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32367,9 +32927,13 @@ func (in *KafkaSpecKafkaTemplateBrokersServiceMetadata) DeepCopyInto(out *KafkaS
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32408,9 +32972,13 @@ func (in *KafkaSpecKafkaTemplateClusterCaCertMetadata) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32449,9 +33017,13 @@ func (in *KafkaSpecKafkaTemplateClusterRoleBindingMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32490,9 +33062,13 @@ func (in *KafkaSpecKafkaTemplateExternalBootstrapIngressMetadata) DeepCopyInto(o
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32531,9 +33107,13 @@ func (in *KafkaSpecKafkaTemplateExternalBootstrapRouteMetadata) DeepCopyInto(out
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32572,9 +33152,13 @@ func (in *KafkaSpecKafkaTemplateExternalBootstrapServiceMetadata) DeepCopyInto(o
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -32855,9 +33439,13 @@ func (in *KafkaSpecKafkaTemplateJmxSecretMetadata) DeepCopyInto(out *KafkaSpecKa
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33138,9 +33726,13 @@ func (in *KafkaSpecKafkaTemplatePerPodIngressMetadata) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33179,9 +33771,13 @@ func (in *KafkaSpecKafkaTemplatePerPodRouteMetadata) DeepCopyInto(out *KafkaSpec
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33220,9 +33816,13 @@ func (in *KafkaSpecKafkaTemplatePerPodServiceMetadata) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33261,9 +33861,13 @@ func (in *KafkaSpecKafkaTemplatePersistentVolumeClaimMetadata) DeepCopyInto(out 
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33743,6 +34347,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAffinityPreferredDuringSchedulingI
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33798,6 +34404,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAffinityPreferredDuringSchedulingI
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33888,6 +34496,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAffinityRequiredDuringSchedulingIg
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -33943,6 +34553,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAffinityRequiredDuringSchedulingIg
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34087,6 +34699,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAntiAffinityPreferredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34142,6 +34756,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAntiAffinityPreferredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34232,6 +34848,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAntiAffinityRequiredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34287,6 +34905,8 @@ func (in *KafkaSpecKafkaTemplatePodAffinityPodAntiAffinityRequiredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34360,9 +34980,13 @@ func (in *KafkaSpecKafkaTemplatePodDisruptionBudgetMetadata) DeepCopyInto(out *K
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34426,9 +35050,13 @@ func (in *KafkaSpecKafkaTemplatePodMetadata) DeepCopyInto(out *KafkaSpecKafkaTem
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34654,9 +35282,13 @@ func (in *KafkaSpecKafkaTemplatePodSetMetadata) DeepCopyInto(out *KafkaSpecKafka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34777,6 +35409,8 @@ func (in *KafkaSpecKafkaTemplatePodTopologySpreadConstraintsElemLabelSelector) D
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34845,9 +35479,13 @@ func (in *KafkaSpecKafkaTemplateServiceAccountMetadata) DeepCopyInto(out *KafkaS
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34891,9 +35529,13 @@ func (in *KafkaSpecKafkaTemplateStatefulsetMetadata) DeepCopyInto(out *KafkaSpec
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -34912,6 +35554,8 @@ func (in *KafkaSpecZookeeper) DeepCopyInto(out *KafkaSpecZookeeper) {
 	*out = *in
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Image != nil {
 		in, out := &in.Image, &out.Image
@@ -35103,6 +35747,8 @@ func (in *KafkaSpecZookeeperLogging) DeepCopyInto(out *KafkaSpecZookeeperLogging
 	*out = *in
 	if in.Loggers != nil {
 		in, out := &in.Loggers, &out.Loggers
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueFrom != nil {
 		in, out := &in.ValueFrom, &out.ValueFrom
@@ -35289,9 +35935,13 @@ func (in *KafkaSpecZookeeperResources) DeepCopyInto(out *KafkaSpecZookeeperResou
 	}
 	if in.Limits != nil {
 		in, out := &in.Limits, &out.Limits
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Requests != nil {
 		in, out := &in.Requests, &out.Requests
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -35352,6 +36002,8 @@ func (in *KafkaSpecZookeeperStorage) DeepCopyInto(out *KafkaSpecZookeeperStorage
 	}
 	if in.Selector != nil {
 		in, out := &in.Selector, &out.Selector
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Size != nil {
 		in, out := &in.Size, &out.Size
@@ -35500,9 +36152,13 @@ func (in *KafkaSpecZookeeperTemplateClientServiceMetadata) DeepCopyInto(out *Kaf
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -35541,9 +36197,13 @@ func (in *KafkaSpecZookeeperTemplateJmxSecretMetadata) DeepCopyInto(out *KafkaSp
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -35592,9 +36252,13 @@ func (in *KafkaSpecZookeeperTemplateNodesServiceMetadata) DeepCopyInto(out *Kafk
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -35633,9 +36297,13 @@ func (in *KafkaSpecZookeeperTemplatePersistentVolumeClaimMetadata) DeepCopyInto(
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36115,6 +36783,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAffinityPreferredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36170,6 +36840,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAffinityPreferredDuringSchedul
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36260,6 +36932,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAffinityRequiredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36315,6 +36989,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAffinityRequiredDuringScheduli
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36459,6 +37135,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAntiAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36514,6 +37192,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAntiAffinityPreferredDuringSch
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36604,6 +37284,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAntiAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36659,6 +37341,8 @@ func (in *KafkaSpecZookeeperTemplatePodAffinityPodAntiAffinityRequiredDuringSche
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36732,9 +37416,13 @@ func (in *KafkaSpecZookeeperTemplatePodDisruptionBudgetMetadata) DeepCopyInto(ou
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -36798,9 +37486,13 @@ func (in *KafkaSpecZookeeperTemplatePodMetadata) DeepCopyInto(out *KafkaSpecZook
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -37026,9 +37718,13 @@ func (in *KafkaSpecZookeeperTemplatePodSetMetadata) DeepCopyInto(out *KafkaSpecZ
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -37149,6 +37845,8 @@ func (in *KafkaSpecZookeeperTemplatePodTopologySpreadConstraintsElemLabelSelecto
 	}
 	if in.MatchLabels != nil {
 		in, out := &in.MatchLabels, &out.MatchLabels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -37217,9 +37915,13 @@ func (in *KafkaSpecZookeeperTemplateServiceAccountMetadata) DeepCopyInto(out *Ka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -37263,9 +37965,13 @@ func (in *KafkaSpecZookeeperTemplateStatefulsetMetadata) DeepCopyInto(out *Kafka
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -37766,6 +38472,8 @@ func (in *KafkaTopicSpec) DeepCopyInto(out *KafkaTopicSpec) {
 	*out = *in
 	if in.Config != nil {
 		in, out := &in.Config, &out.Config
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Partitions != nil {
 		in, out := &in.Partitions, &out.Partitions
@@ -38217,9 +38925,13 @@ func (in *KafkaUserSpecTemplateSecretMetadata) DeepCopyInto(out *KafkaUserSpecTe
 	*out = *in
 	if in.Annotations != nil {
 		in, out := &in.Annotations, &out.Annotations
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Labels != nil {
 		in, out := &in.Labels, &out.Labels
+		*out = new(v1.JSON)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
